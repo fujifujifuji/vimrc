@@ -48,18 +48,46 @@ endif
 
 "filetype plugin indent on
 
-
+" シンタックスハイライト
 syntax on
-set encoding=utf-8
 
+" エンコード, ファイルエンコード
+set encoding=utf-8
 set fileencoding=utf-8
+
 set fileencodings=ucs-boms,utf-8,euc-jp,cp932
 set fileformats=unix,dos,mac
+
+"記号の文字が崩れる問題を解決"
 set ambiwidth=double
+
+" .swapファイルを作らない
+set noswapfile
+
+" バックアップファイルを作らない
+set nowritebackup
+
+" バックアップをしない
+set nobackup
+
+" インクリメンタルサーチを行う
 set incsearch
+
+" 小文字の検索でも大文字も見つかるようにする
 set ignorecase
+
+" ただし大文字も含めた検索の場合はその通りに検索する
 set smartcase
+
+" 検索結果をハイライト
 set hlsearch
+
+" 対応括弧をハイライト表示する
+set showmatch
+
+" コマンドを画面最下部に表示する
+set showcmd
+
 set cursorline
 set wildmenu
 set history=5000
@@ -72,5 +100,9 @@ set statusline+=%=
 set statusline+=[ENC=%{&fileencoding}]
 set statusline+=[LOW=%l/%L]
 set laststatus=2
+
+" 画面上でタブ文字が占める幅の指定
 set tabstop=2
+
+" NERDTree
 nnoremap <silent><C-e> :NERDTreeToggle<CR>
